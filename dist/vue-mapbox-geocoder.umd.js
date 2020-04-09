@@ -7,12 +7,12 @@
   else if (typeof define === "function" && define.amd)
     define(["vue-mapbox", "@mapbox/mapbox-gl-geocoder"], factory);
   else if (typeof exports === "object")
-    exports["@dean9703111/vue-mapbox-geocoder"] = factory(
+    exports["vue-mapbox-geocoder"] = factory(
       require("vue-mapbox"),
       require("@mapbox/mapbox-gl-geocoder")
     );
   else
-    root["@dean9703111/vue-mapbox-geocoder"] = factory(
+    root["vue-mapbox-geocoder"] = factory(
       root["vue-mapbox"],
       root["mapbox-gl-geocoder"]
     );
