@@ -20,10 +20,6 @@ export default {
       type: String,
       default: "top-right"
     },
-    container: {
-        type: String,
-        default: null
-    },
     // Mapbox-geocoder options
     accessToken: {
       type: String,
@@ -127,12 +123,8 @@ export default {
 
   methods: {
     $_deferredMount() {
-        if(this.container !== null){
-            document.getElementById(this.container).appendChild(this.control.onAdd(this.map))
-        }else{
-            this.map.addControl(this.control, this.position);
-        }
-    if (this.input) {
+      this.map.addControl(this.control, this.position);
+      if (this.input) {
         this.control.setInput(this.input);
       }
       this.$_emitEvent("added", { geocoder: this.control });
